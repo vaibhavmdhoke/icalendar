@@ -171,6 +171,21 @@ END:VCALENDAR
     end
   end
 
+  describe '#request' do
+    it 'sets ip_method to "REQUEST"' do
+      subject.request
+      expect(subject.ip_method).to eq 'REQUEST'
+    end
+  end
+
+  describe '#cancel' do
+    it 'sets ip_method to "CANCEL"' do
+      subject.cancel
+      expect(subject.ip_method).to eq 'CANCEL'
+      expect(subject.status).to eq 'CANCELLED'
+    end
+  end
+
   describe '.parse' do
     let(:source) { File.read File.join(File.dirname(__FILE__), 'fixtures', 'bad_wrapping.ics') }
 
