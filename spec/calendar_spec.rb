@@ -182,7 +182,6 @@ END:VCALENDAR
     it 'sets ip_method to "CANCEL"' do
       subject.cancel
       expect(subject.ip_method).to eq 'CANCEL'
-      expect(subject.status).to eq 'CANCELLED'
     end
   end
 
